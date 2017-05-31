@@ -70,10 +70,10 @@
 					        <div class="weui-cells" style="margin-top: 0;">
 					        	{% if site.posts.size < 10 %}
 					        		{% for v in site.posts %}
-					        			<div class="weui-cell">
+					        			<div class="weui-cell" data-url={{v.url}}>
 							                <div class="weui-cell__hd" style="position: relative;margin-right: 10px;">
-							                    <img src="assets/images/edit1.png" style="width: 50px;display: block">
-							                    <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">11</span>
+							                    <img src="assets/images/edit{{forloop.index | modulo:8}}.png" style="width: 50px;display: block">
+							                    <span class="weui-badge" style="position: absolute;top: -.4em;right: -.4em;">读</span>
 							                </div>
 							                <div class="weui-cell__bd">
 							                    <div>{{v.title}}</div>
@@ -139,7 +139,7 @@
 						        </a>
 						        <a href="javascript:;" class="weui-grid">
 						            <div class="weui-grid__icon">
-						                <img src="./assets/images/JEKYLL.png" alt="">
+						                <img src="./assets/images/jk.png" alt="">
 						            </div>
 						            <p class="weui-grid__label">JEKYLL</p>
 						        </a>

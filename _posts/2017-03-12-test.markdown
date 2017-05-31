@@ -1,0 +1,8 @@
+---
+layout : page
+title : 加入这是一篇测试文章
+category : JAVASCRIPT
+---
+世界将走进互联网时代，这是一个美丽的时代
+
+所以我在做测试，代码测试

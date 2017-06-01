@@ -9,6 +9,7 @@
 		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+		<script src="assets/script/in.js" type="text/javascript" charset="utf-8"></script>
 		<style>
 		/* Custom Styles */
 		    ul.nav-tabs{
@@ -44,6 +45,15 @@
 			       right: 10px;
 			       z-index: 3;
 			    }
+			    .container{
+			    	padding: 0;
+			    }
+			    .row{
+			    	margin: 0;
+			    }
+			    .row>div[class^="col-sm"]{
+			    	padding: 0;
+			    }
 		    }
 		    
 		    .weui-cell__bd{
@@ -63,18 +73,29 @@
 	</head>
 	
 	<body data-spy = "scroll" data-target = "#myScrollspy">
+		<script type="text/javascript">
+			var a = new startIn({
+				href : 'assets/images/run1.gif',
+				ts : '.2s all ease-in',
+				zIndex : 1000
+			});
+		</script>
 		<div class="container">
-			<div class="jumbotron">
-		        <h1>Bootstrap Affix</h1>
-		    </div>
+			<div class="row">
+				<div class="col-sm-12">
+					<a href="">
+						<img src="./assets/images/top2.jpg" alt="图" width="100%"/>
+					</a>
+				</div>
+			</div>
 		    <div class="row">
 		    	<div class="col-sm-3" id="myScrollspy">
 		    		<ul class="nav nav-tabs nav-stacked affix-top" data-spy = "affix" data-offset-top = "125">
 		    			{% for item in site.categories %}
 		    				{% if forloop.first == true %}
-		    					<li class="active"><a href="#{{item | first}}">{{item | first}}</a></li>
+		    					<li class="active"><a href="#{{item | first}}">{{item | first}}<span class="badge pull-right">{{item.last.size}}</span></a></li>
 		    				{% else %}
-		    					<li><a href="#{{item | first}}">{{item | first}}</a></li>
+		    					<li><a href="#{{item | first}}">{{item | first}}<span class="badge pull-right">{{item.last.size}}</span></a></li>
 		    				{% endif %}
 		    			{% endfor %}
 		    		</ul>
@@ -115,4 +136,9 @@
             <p class="weui-footer__text">Copyright © 2008-2016 Chen Yi</p>
         </div>
 	</body>
+	<script type="text/javascript">
+		setTimeout(function  () {
+			a.hide();
+		},1000);
+	</script>
 </html>

@@ -9,6 +9,7 @@
 		<script src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="https://res.wx.qq.com/open/libs/weuijs/1.1.1/weui.min.js"></script>
+		<script src="assets/script/in.js" type="text/javascript" charset="utf-8"></script>
 		<style type="text/css">
 			@media screen and (min-width: 300px) and (max-width: 768px) {
 				html{
@@ -46,7 +47,13 @@
 		</style>
 	</head>
 	<body>
-		
+		<script type="text/javascript">
+			var a = new startIn({
+				href : 'assets/images/run2.gif',
+				ts : '.3s all ease-in',
+				zIndex : 1000
+			});
+		</script>
 		<div class="page tabbar js_show" style="height: 100%;">
 		    <div class="page__bd" style="height: 100%;">
 		        <div class="weui-tab">
@@ -249,5 +256,8 @@
 		        document.title.innerHTML = title;
 		    }
 		});
+		setTimeout(function  () {
+			a.hide();
+		},1000);
 	</script>
 </html>
